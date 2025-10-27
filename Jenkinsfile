@@ -10,7 +10,7 @@ pipeline {
         stage('Checkout') {
             steps {
                 git branch: 'main', url: 'https://github.com/Silver595/java-jenkins-docker-demo.git'
-		credentialsId: 'dockerhub-creds'            
+		credentialsId: 'github-pat'            
 }
         }
 

@@ -1,7 +1,11 @@
-FROM eclipse-temurin:17-jdk-jammy
+# Use official OpenJDK image
+FROM openjdk:17-jdk-slim
 
+# Set working directory inside the container
 WORKDIR /app
 
-COPY target/demo-1.0.0-jar-with-dependencies.jar app.jar
+# Copy all jar files from target/ to /app
+COPY target/*.jar app.jar
 
-ENTRYPOINT ["java","-jar","/app/app.jar"]
+# Run the application
+ENTRYPOINT ["java", "-jar", "app.jar"]
